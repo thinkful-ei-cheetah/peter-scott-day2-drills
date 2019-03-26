@@ -55,11 +55,27 @@ const rocksWarning = hazardWarningCreator('Rocks on the Road');
 const iceWarning = hazardWarningCreator('Ice on the Road');
 const slothsWarning = hazardWarningCreator('sloths on the Road');
 
-slothsWarning('red-line ft totten');
-slothsWarning('red-line ft totten');
-slothsWarning('red-line ft totten');
-iceWarning('annandale Va');
-rocksWarning('main st and pacific ave');
-slothsWarning('red-line ft totten');
+// slothsWarning('red-line ft totten');
+// slothsWarning('red-line ft totten');
+// slothsWarning('red-line ft totten');
+// iceWarning('annandale Va');
+// rocksWarning('main st and pacific ave');
+// slothsWarning('red-line ft totten');
 
+function stepsTaken(arr) {
+  const steps = arr.filter(steps => {
+    return steps[0] >= 0 && steps[1] >= 0;
+  });
+  return steps;
+}
 
+const arr = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+const totalSteps = arr.map(steps => steps[0] + steps[1]);
+
+arr.forEach(function(steps) {
+  console.log(Math.abs(steps[0]) + Math.abs(steps[1]));
+});
+
+console.log(totalSteps);
+
+console.log(stepsTaken(arr));
