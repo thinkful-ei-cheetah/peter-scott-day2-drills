@@ -20,7 +20,7 @@ function max(num) {
 
 let numb = [1,2,3,4,5,6];
 
-console.log(max(numb));
+// console.log(max(numb));
 
 function min(num) {
     if (num.length === 0){
@@ -39,4 +39,14 @@ function min(num) {
 }
 }
 
-console.log(min(numb));
+// console.log(min(numb));
+
+function average(num) {
+    let sum = 0;
+    num.forEach((function(element) {
+        sum += element;
+      }));
+    return sum / num.length;
+}
+
+console.log(average([1,2,3,4,5,6]));
