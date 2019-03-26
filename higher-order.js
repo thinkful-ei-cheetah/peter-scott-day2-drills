@@ -6,11 +6,11 @@ function repeat(fn,n){
 }
 
 function hello () {
-  console.log("hello world");
+  console.log('hello world');
 }
 
 function goodbye() {
-  console.log("Goodbye world");
+  console.log('Goodbye world');
 }
 
 // repeat(hello,5);
@@ -39,6 +39,27 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
-console.log(filteredNames); // => ['Rich', 'Ray']
+// console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+function hazardWarningCreator (typeOfWarning){
+  let warningCounter = 0;
+  return function (location) {
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+  }; 
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const iceWarning = hazardWarningCreator('Ice on the Road');
+const slothsWarning = hazardWarningCreator('sloths on the Road');
+
+slothsWarning('red-line ft totten');
+slothsWarning('red-line ft totten');
+slothsWarning('red-line ft totten');
+iceWarning('annandale Va');
+rocksWarning('main st and pacific ave');
+slothsWarning('red-line ft totten');
+
 
