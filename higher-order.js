@@ -76,6 +76,19 @@ arr.forEach(function(steps) {
   console.log(Math.abs(steps[0]) + Math.abs(steps[1]));
 });
 
-console.log(totalSteps);
+// console.log(totalSteps);
 
-console.log(stepsTaken(arr));
+// console.log(stepsTaken(arr));
+const tString = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'
+
+const eCode = tString.split(' ');
+
+eCode.reduce(function (acc,word){
+    if(word.length === 3){
+        acc += " ";
+    }
+    else {
+        acc += (word[word.length-1]).toUpperCase();
+    }
+    return acc;
+},"");
